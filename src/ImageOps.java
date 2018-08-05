@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class ImageOps {
+	
+	//This function returns a 25x25 image with a filled rectangle  at co-ordinates (5,5) of length 7 and width 5 pixels.  
 	public static int[][] CreateImage1(){
 		int width=25;
 		int height=25;
@@ -35,6 +37,7 @@ public class ImageOps {
 		return pixels;
 	}
 
+	//This function returns a 25x25 image with a filled ellipse at co-ordinates (5,5) of length 10 and width 5 pixels.
 	public static int[][] CreateImage2(){
 		int width=25;
 		int height=25;
@@ -51,7 +54,8 @@ public class ImageOps {
 		}
 		return pixels;
 	}
-	
+
+	//This function returns a 25x25 image with an arc  at co-ordinates (5,5).	
 	public static int[][] CreateImage3(){
 		int width=25;
 		int height=25;
@@ -69,7 +73,10 @@ public class ImageOps {
 		return pixels;
 	}
 	
+	//This function takes each 2D image array as an input and performs operations
+	//such as display, translation,rotation and scaling. 
 	public static int Operations(int[][] image){
+		//Display
 		JFrame frame=new JFrame();
 		BufferedImage img= new BufferedImage(25,25,BufferedImage.TYPE_INT_RGB);
 		for(int i=0;i<25;i++){
@@ -92,7 +99,8 @@ public class ImageOps {
     			Thread.currentThread().interrupt();
 		}
 		frame.dispose();
-
+		
+		//Translation -5 in x-direction
 		frame=new JFrame();
 		img= new BufferedImage(25,25,BufferedImage.TYPE_INT_RGB);
 		for(int i=0;i<25;i++){
@@ -121,6 +129,7 @@ public class ImageOps {
 		}		
 		frame.dispose();
 
+		//Translation +7 in y direction
 		frame=new JFrame();
 		img= new BufferedImage(25,25,BufferedImage.TYPE_INT_RGB);
 		for(int i=0;i<25;i++){
@@ -149,6 +158,7 @@ public class ImageOps {
 		}		
 		frame.dispose();
 
+		//Rotation -45 deg counter-clockwise
 		frame=new JFrame();	
 		img= new BufferedImage(25,25,BufferedImage.TYPE_INT_RGB);
 		for(int i=0;i<25;i++){
@@ -175,6 +185,7 @@ public class ImageOps {
 		}		
 		frame.dispose();
 
+		//Rotation 90 deg clockwise
 		frame=new JFrame();	
 		img= new BufferedImage(25,25,BufferedImage.TYPE_INT_RGB);
 		for(int i=0;i<25;i++){
@@ -201,6 +212,7 @@ public class ImageOps {
 		}		
 		frame.dispose();
 
+		//Scaling by 2 in x direction
 		frame=new JFrame();	
 		img= new BufferedImage(25,25,BufferedImage.TYPE_INT_RGB);
 		for(int i=0;i<25;i++){
@@ -228,6 +240,7 @@ public class ImageOps {
 		}		
 		frame.dispose();
 
+		//Scaling by 0.5 in y-direction
 		frame=new JFrame();	
 		img= new BufferedImage(25,25,BufferedImage.TYPE_INT_RGB);
 		for(int i=0;i<25;i++){
@@ -259,6 +272,8 @@ public class ImageOps {
 	}
 	
 	public static void main(String[] args){
+		//Images are stored in separate 2D arrays and passed to Operations() 
+		//for display and other operations
 		int[][] image1=CreateImage1();
 		int[][] image2=CreateImage2();
 		int[][] image3=CreateImage3();
