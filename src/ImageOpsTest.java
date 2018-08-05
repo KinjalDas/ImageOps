@@ -34,6 +34,9 @@ class ImageOpsTest extends ImageOps {
 		assertEquals(1,resultOps);
 	}
 
+	//This tests whether the 2D array integers returned by the CreateImage()
+	//functions return 25X25 pixels or not and whether they arey valid pixel
+	//values or not 
 	int checkPixels(int[][] result) {
 		int count=0;
 		for(int i=0;i<25;i++) {
